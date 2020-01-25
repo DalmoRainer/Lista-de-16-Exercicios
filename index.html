@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="br">
+  <head>
+    <div class="container">
+    <title>Formulário Padrão HTML COM JavaScript</title>
+    <script>
+        nome1 = window.prompt("Qual é o seu nome?");
+        if(nome1 != null && nome1 != ""){
+            document.write("Olá, " + nome1 + "!");
+        }
+        else{
+            document.write("<center><h3>Olá, visitante!</h3></center><hr>");
+        }
+    </script>
+
+    <script>
+        function validar() {
+            if(document.cadastro.nome.value == ""){
+                document.cadastro.nome.focus();
+                return false;
+            }
+            if (document.cadastro.observacoes.value == "") {
+                document.cadastro.observacoes.focus();
+                return false;
+            }
+            if (document.cadastro.email.value == "") {
+                document.cadastro.email.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        var frase = window.prompt("digite uma frase: "); document.write("<br>"+frase + "<br>"); tamanho = frase.length;
+            for (var i = 0; i < tamanho;) {
+                document.write("<br>Caractere na posição " + i + " : " + frase.charAt(i)); i++;
+            }
+            document.write("<br><br>Primeiro caractere: " + frase.charAt(0) + "<br />"); document.write("Último caractere: " + frase.charAt(frase.length - 1)+"<hr>");
+        /*
+        O método charAt() retorna o caractere da posição especificada da string (do índice especificado).
+        */
+
+    </script>
+
+    <script>
+        hoje = new Date();
+        document.write("<br><br><center>Data e hora completa: " + hoje);
+        document.write("<br>Apenas o dia: " + hoje.getDate());
+        document.write("<br>Apenas o mês (1 a 12): " + (hoje.getMonth()+1));
+        document.write("<br>Apenas o ano: " + hoje.getFullYear());
+        document.write("<br>Apenas o dia da semana (1 a 7): " + (hoje.getDay()+1));
+        document.write("<br>Apenas a hora e minutos:"+hoje.getHours()+": "+hoje.getMinutes()+".<br><br><hr></center>");
+
+    </script>
+
+    <script>
+        function abre1() {
+            window.open("http://www.google.com");
+        }
+
+        function abre2() {
+            window.open("http://www.google.com", "simples", "width=350,height=400");
+        }
+
+        function abre3() {
+            window.open("http://www.google.com", "simples", "menubar,scrollbars,width=300, height=200");
+        }
+    </script>
+
+    <script>
+        function quadrado(x) {
+            document.write(x * x);
+        }
+
+        function cubo(x) {
+            return x * x * x
+        }
+
+        var y = 5;
+        document.write("O quadrado de " + y + " é igual a ");
+        quadrado(y);document.write("<hr>")
+    </script>
+
+    <script>
+        document.write("<br>Título da janela aberta: " + document.title + "<br><br><hr>");
+    </script>
+
+    <script>
+        function soma() {
+            x = eval(document.prova.c1.value) + eval(document.prova.c2.value) + eval(document.prova.c3.value);
+            document.prova.c4.value = x;
+        }
+
+        function multiplica() {
+            y = eval(document.prova.c1.value) * eval(document.prova.c2.value) * eval(document.prova.c3.value);
+            document.prova.c4.value = y;
+        }
+    </script>
+
+    <script>
+        function campo_obrigatorio(x) {
+            if (x.value == "") {
+                alert("O campo " + x.name + " não pode ficar em branco.")
+            }
+        }
+    </script>
+
+    <script language="JavaScript"> function mouseEmCima(imagem) {
+            imagem.src = "img/madara.jpg";
+        }
+        function mouseFora(imagem) {
+            imagem.src = "img/madara2.jpg";
+        }
+    </script>
+
+
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </div>
+  </head>
+  <body class="fonte">
+    <div class="container">
+    
+        <h5>Por favor, preencha os campos abaixo e depois clique no botão Enviar. Caso necessite apagar os dados, dê um
+            clique no botão Limpar.<br> Muito Obrigado!
+            <br><br><br></h5>
+            <div class="jumbotron">
+    <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nome</span>
+                </div>
+                <input class="form-control" name="nome" type="text" autocomplete="off" required>
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">E-mail</span>
+                </div>
+                <input class="form-control" name="email" type="text" autocomplete="off" required>
+            </div>
+    
+        Sexo:<br>
+        <INPUT TYPE="RADIO" NAME="sexo" VALUE="f"> Feminino <br>
+        <INPUT TYPE="RADIO" NAME="sexo" VALUE="m"> Masculino <br>
+            <INPUT TYPE="RADIO" NAME="sexo" VALUE="m"> Outros <br><br>
+    
+        Estado Civil:<br>
+        <INPUT TYPE="RADIO" NAME="civil" VALUE="s"> Solteiro <br>
+        <INPUT TYPE="RADIO" NAME="civil" VALUE="c"> Casado <br>
+        <INPUT TYPE="RADIO" NAME="civil" VALUE="e"> Na Pista <br><br>
+    
+        Bens que possui:<br>
+        <INPUT TYPE="CHECKBOX" NAME="bens" VALUE="c"> Casa <br>
+        <INPUT TYPE="CHECKBOX" NAME="bens" VALUE="a"> Automovel <br>
+        <INPUT TYPE="CHECKBOX" NAME="bens" VALUE="m"> Moto <br><br>
+    
+        <select class="custom-select">
+            <option selected>Faixa de idade:</option>
+            <option value="1">3 a 10 anos</option>
+            <option value="2">11 a 25 anos</option>
+            <option value="3">26 a 35 anos</option>
+            <option value="3">36 a 55 anos</option>
+            <option value="3">56 a 90 anos</option>
+        </select><br><br>
+
+        <select class="custom-select">
+            <option selected>Hobby preferido:</option>
+            <option value="1">Ler livros</option>
+            <option value="2">Ouvir música</option>
+            <option value="3">Assistir filmes</option>
+            <option value="3">Praticar esportes</option>
+            <option value="3">Jogar games</option>
+        </select><br><br>
+    
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Observações Gerais:</span>
+            </div>
+            <textarea class="form-control" name="observacoes" type="text" autocomplete="off" required></textarea>
+        </div>
+    
+        <INPUT TYPE="SUBMIT" class="btn btn-primary" VALUE="Enviar os dados" onclick="validar()">
+        <INPUT TYPE="RESET" class="btn btn-danger" VALUE="Limpar os dados">
+        </div>
+    
+    </FORM>
+
+    <form>
+        <br><hr>
+        Dê um clique no botão para abrir uma janela simples:
+        <input class="btn btn-block btn-primary" type="button" name="abrir" value="Janela1" onClick="abre1()"><br><br>
+    
+        Dê um clique no botão para abrir uma janela de 350px de largura por 400px de altura, sem barras e menus:
+        <input class="btn btn-block btn-primary" type="button" name="abrir" value="Janela2" onClick="abre2()"><br><br>
+    
+        Dê um clique no botão para abrir uma janela com menu e barra de rolagens, mas sem barra de endereço e barra padrão:
+        <input class="btn btn-block btn-primary" type="button" name="abrir" value="Janela3" onClick="abre3()"><br><br>
+    </form><hr>
+
+    <form>
+        <br>Informe um número para saber seu valor ao cubo e, em seguida, pressione a tecla TAB ou dê um clique fora da
+        caixa de texto.<br>
+        <input class="form-control" type="text" name="aocubo" value="" onBlur="alert('O cubo de '+this.value+' é '+cubo(this.value))">
+    </form><br><hr>
+
+    <form>
+        <center>
+        <br>Pergunta: Quantos anos tem um século?<br>
+        <input type="button" class="btn btn-block btn-primary" value="a" onclick="alert('A: Volte para 1a série!')">
+        10 anos <br>
+        <input type="button" class="btn btn-block btn-primary" value="b" onclick="alert('B: Correto!')"> 100 anos <br>
+        <input type="button" class="btn btn-block btn-primary" value="c" onclick="alert('C: MEU DEUS!!!')"> 1000 anos
+        <br>
+        <input type="button" class="btn btn-block btn-primary" value="d" onclick="alert('D: Não dá para arriscar nada?!?!')"> Não sei <br>
+        </center>
+    </form><br><br><hr>
+
+    <form name="prova">
+        <br>Entre com os valores nos campos e dê um clique nos botões. <br><br> Valor1: <input type="text" class="form-control" name="c1" value=""size=5 maxlength=5><br>
+        Valor2: <input type="text" class="form-control" name="c2" value="" size=5 maxlength=5><br>
+        Valor3: <input type="text" class="form-control" name="c3" value="" size=5 maxlength=5><br>
+        <br>
+        <input type="button" class="btn btn-block btn-primary" value="Somar" onclick="soma()">
+        <input type="button" class="btn btn-block btn-primary" value="Multiplicar" onclick="multiplica()">
+        <br><br>
+        Resposta: <input type="text" class="form-control" name="c4" value="" size=10 maxlength=0>
+    </form><br><hr>
+
+    <br>Nota: os campos marcados com asterisco são obrigatórios. <br><br>
+    <form>
+        *Nome Completo: <input type="text" class="form-control" name="nome" value="" size=30 maxlength=30 onblur="campo_obrigatorio(this)"><br>
+        Idade: <input type="text" class="form-control" name="idade" value="" size=5 maxlength=5><br>
+        *Cidade: <input type="text" class="form-control" name="cidade" value="" size=20 maxlength=20 onblur="campo_obrigatorio(this)"><br>
+        Telefone: <input type="text" class="form-control" name="telefone" value="" size=15 maxlength=15><br>
+    </form><br><hr>
+
+    <br>Passe o mouse sobre a imagem: <br><br>
+    <img src="img/madara.jpg" onclick="mouseEmCima(this)" onMouseOver="mouseFora(this)" width="300" height="300">
+    <br><br>
+    1) Agora padronize os tamanhos das imagens. <br><br>
+    
+    2) Mude o evento para que as imagens sejam trocadas ao "clicar" com o mouse.
+    <br><br><hr>
+
+    <script language="JavaScript"> var dia = new Date();
+        var hora = dia.getHours();
+        var minuto = dia.getMinutes();
+        if ((hora == 1) || (hora == 2) || (hora == 3) || (hora == 4) || (hora == 5)) document.write("<br>Você não devia estar dormindo?<br><hr>");
+        if ((hora == 6) || (hora == 7) || (hora == 8) || (hora == 9) || (hora == 10) || (hora == 11)) document.write("<br>Bom dia!<br><hr>");
+        if (hora == 12) document.write("<br>Vamos almoçar?<br><hr>");
+        if ((hora == 13) || (hora == 14) || (hora == 15) || (hora == 16) || (hora == 17)) document.write("<br>Boa Tarde!<br><hr>");
+        if ((hora == 18) || (hora == 19)) document.write("<br>Bom final de tarde!<br><hr>");
+        if ((hora == 20) || (hora == 21) || (hora == 22)) document.write("<br>Boa noite!<br><hr>"); if (hora == 23) document.write("<br>Ó Meu! Já é quase meia-noite!<br><hr>");
+        if (hora == 0) document.write("<br>Meia-noite! Já é amanhã!<br><hr>");
+    </script>
+
+    <script language="JavaScript">
+
+        dia = new Date();
+        hora = dia.getHours()
+
+        if (hora < 18) {
+            document.write('<img src= "img/madara.jpg ">');
+        }
+        else {
+            document.write('<img src= "img/madara2.jpg ">');
+        }
+    </script>
+    
+    <br><br> E ai cara ! <br><br>
+
+
+
+    </div>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
